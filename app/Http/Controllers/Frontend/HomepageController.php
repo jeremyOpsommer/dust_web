@@ -20,16 +20,16 @@ class HomepageController extends Controller
                 'namespace' => 'static-eu',
                 'locale' => 'fr_FR'
             ]);
-        dd($response->json());
         //test request with user token
         /*$response = Http::withToken('EUQF8HLmggIRGlilXkYI3PuKV7Pn7qBiT5')
             ->get('https://eu.api.blizzard.com/profile/user/wow', [
                 'namespace' => 'profile-eu',
                 'locale' => 'fr_FR'
             ]);*/
-        //dd($response);
-        return $response->json();
-        return view('welcome');
+        //return $response->json();
+        return view('welcome', [
+            'response' => $response->json(),
+        ]);
         //return Inertia::render("Homepage");
     }
 }
