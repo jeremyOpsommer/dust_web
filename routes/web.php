@@ -5,4 +5,5 @@ use App\Http\Controllers\Frontend\HomepageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
+Route::get('/test', [HomepageController::class, 'test'])->name('test');
 Route::get('/oauth', OAuthController::class)->name('oauth');

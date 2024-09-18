@@ -32,4 +32,28 @@ class HomepageController extends Controller
         ]);
         //return Inertia::render("Homepage");
     }
+
+    public function test()
+    {
+        $streamers = [
+            ['id' => 1, 'name' => 'Streamer 1', 'avatar' => '/path/to/avatar1.jpg', 'description' => 'Best streamer ever.'],
+            // ... autres streamers
+        ];
+
+        $guides = [
+            ['id' => 1, 'title' => 'Guide 1', 'summary' => 'This is a guide summary.', 'url' => '/guides/1'],
+            // ... autres guides
+        ];
+
+        $achievements = [
+            ['id' => 1, 'title' => 'Achievement 1', 'description' => 'User achievement description.', 'image' => '/path/to/image1.jpg'],
+            // ... autres réalisations
+        ];
+
+        return Inertia::render('Homepage', [
+            'streamers' => $streamers,
+            'guides' => $guides,
+            'achievements' => $achievements,
+        ]);
+    }
 }
