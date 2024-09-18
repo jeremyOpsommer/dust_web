@@ -1,61 +1,49 @@
 <template>
-    <div class="bg-gray-900 text-white min-h-screen">
-        <header class="bg-gray-800 p-4">
-            <nav class="container mx-auto flex justify-between items-center">
-                <h1 class="text-2xl font-bold">Gaming Hub</h1>
-                <ul class="flex space-x-4">
-                    <li><a href="#streamers" class="hover:underline">Streamers</a></li>
-                    <li><a href="#guides" class="hover:underline">Guides</a></li>
-                    <li><a href="#achievements" class="hover:underline">Achievements</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main class="container mx-auto p-6">
-            <!-- Streamers Section -->
-            <section id="streamers" class="my-12">
-                <h2 class="text-3xl font-bold mb-4">Top Streamers</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <StreamerCard v-for="streamer in streamers" :key="streamer.id" :streamer="streamer" />
-                </div>
-            </section>
-
-            <!-- Guides Section -->
-            <section id="guides" class="my-12">
-                <h2 class="text-3xl font-bold mb-4">Game Guides</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <GuideCard v-for="guide in guides" :key="guide.id" :guide="guide" />
-                </div>
-            </section>
-
-            <!-- Achievements Section -->
-            <section id="achievements" class="my-12">
-                <h2 class="text-3xl font-bold mb-4">User Achievements</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <UserAchievementCard v-for="achievement in achievements" :key="achievement.id" :achievement="achievement" />
-                </div>
-            </section>
-        </main>
-        <footer class="bg-gray-800 p-4 text-center">
-            <p>&copy; 2024 Gaming Hub. All rights reserved.</p>
-        </footer>
-    </div>
+    <AppLayout>
+        <HeroSection
+            title="Bienvenue sur Gaming Hub"
+            subtitle="Découvrez les meilleurs streamers, guides de jeux, et les réalisations de notre communauté."
+            ctaLink="#guides"
+            ctaText="Explorez les Guides"
+            backgroundImage="/hero-bg.jpg"
+        />
+        <StreamersSection
+            title="Streamers en vedette"
+            :streamers="streamers"
+        />
+        <GuidesSection
+            title="Guides de jeu"
+            :guides="guides"
+        />
+        <AchievementsSection
+            title="Réalisations des utilisateurs"
+            :achievements="achievements"
+        />
+    </AppLayout>
 </template>
 
-<script>
-import StreamerCard from '@/Components/StreamerCard.vue';
-import GuideCard from '@/Components/GuideCard.vue';
-import UserAchievementCard from '@/Components/UserAchievementCard.vue';
+<script setup>
+import AppLayout from '@/Layouts/AppLayout.vue';
+import HeroSection from '@/Components/HeroSection.vue';
+import StreamersSection from '@/Components/StreamersSection.vue';
+import GuidesSection from '@/Components/GuidesSection.vue';
+import AchievementsSection from '@/Components/AchievementsSection.vue';
 
-export default {
-    props: {
-        streamers: Array,
-        guides: Array,
-        achievements: Array,
-    },
-    components: {
-        StreamerCard,
-        GuideCard,
-        UserAchievementCard,
-    },
-};
+const streamers = [
+    { name: 'Streamer 1', image: '/streamer1.jpg', description: 'Joueur pro et expert en FPS.' },
+    { name: 'Streamer 2', image: '/streamer2.jpg', description: 'Streamer de jeux d’aventure.' },
+    { name: 'Streamer 3', image: '/streamer3.jpg', description: 'Expert en jeux de stratégie.' },
+];
+
+const guides = [
+    { title: 'Guide pour le jeu XYZ', description: 'Tout ce qu\'il faut savoir pour maîtriser le jeu XYZ.', link: '#' },
+    { title: 'Guide pour le jeu ABC', description: 'Conseils essentiels et astuces pour dominer dans le jeu ABC.', link: '#' },
+    { title: 'Guide pour le jeu DEF', description: 'Analyse approfondie et tactiques pour exceller dans DEF.', link: '#' },
+];
+
+const achievements = [
+    { title: 'Utilisateur 1', description: 'A atteint le niveau 50 dans XYZ avec des statistiques impressionnantes !' },
+    { title: 'Utilisateur 2', description: 'A remporté le tournoi ABC avec une performance incroyable.' },
+    { title: 'Utilisateur 3', description: 'Premier à terminer le jeu DEF en mode difficile. Bravo !' },
+];
 </script>

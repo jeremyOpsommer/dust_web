@@ -36,7 +36,7 @@ class HomepageController extends Controller
     public function test()
     {
         $streamers = [
-            ['id' => 1, 'name' => 'Streamer 1', 'avatar' => '/path/to/avatar1.jpg', 'description' => 'Best streamer ever.'],
+            ['id' => 1, 'name' => 'Streamer 1', 'avatar' => 'https://via.placeholder.com/150', 'description' => 'Best streamer ever.'],
             // ... autres streamers
         ];
 
@@ -46,7 +46,7 @@ class HomepageController extends Controller
         ];
 
         $achievements = [
-            ['id' => 1, 'title' => 'Achievement 1', 'description' => 'User achievement description.', 'image' => '/path/to/image1.jpg'],
+            ['id' => 1, 'title' => 'Achievement 1', 'description' => 'User achievement description.', 'image' => 'https://via.placeholder.com/150'],
             // ... autres réalisations
         ];
 
