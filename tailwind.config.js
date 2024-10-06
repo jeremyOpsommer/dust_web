@@ -8,7 +8,9 @@ export default {
         './resources/js/**/*.js',
         './app/Http/Controllers/**/*.php',
         './vendor/filament/**/*.blade.php',
+        './node_modules/flowbite/**/*.js',
     ],
+    darkMode: 'class',
     theme: {
         extend: {
             colors: {
@@ -36,5 +38,7 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('flowbite/plugin'),
+    ],
 };

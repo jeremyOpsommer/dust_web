@@ -27,6 +27,7 @@ class HomepageController extends Controller
                 'locale' => 'fr_FR'
             ]);*/
         //return $response->json();
+        //dd($response);
         return view('welcome', [
             'response' => $response->json(),
         ]);
