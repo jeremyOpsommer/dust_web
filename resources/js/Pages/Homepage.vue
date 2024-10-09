@@ -24,10 +24,10 @@
 
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import HeroSection from '@/Components/HeroSection.vue';
-import StreamersSection from '@/Components/StreamersSection.vue';
-import GuidesSection from '@/Components/GuidesSection.vue';
-import AchievementsSection from '@/Components/AchievementsSection.vue';
+import HeroSection from '@/Components/Homepage/HeroSection.vue';
+import StreamersSection from '@/Components/Homepage/StreamersSection.vue';
+import GuidesSection from '@/Components/Homepage/GuidesSection.vue';
+import AchievementsSection from '@/Components/Homepage/AchievementsSection.vue';
 
 const streamers = [
     { name: 'Streamer 1', image: '/streamer1.jpg', description: 'Joueur pro et expert en FPS.' },

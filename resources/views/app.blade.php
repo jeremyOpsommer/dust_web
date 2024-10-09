@@ -9,6 +9,7 @@
 
     <!-- Inclure les styles avec Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @routes
     @inertiaHead
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC

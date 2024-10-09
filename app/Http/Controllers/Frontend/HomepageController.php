@@ -13,29 +13,6 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $token = session()->get('client_token');
-        //test request with client token
-        $response = Http::withToken($token)
-            ->get('https://eu.api.blizzard.com/data/wow/item/19019', [
-                'namespace' => 'static-eu',
-                'locale' => 'fr_FR'
-            ]);
-        //test request with user token
-        /*$response = Http::withToken('EUQF8HLmggIRGlilXkYI3PuKV7Pn7qBiT5')
-            ->get('https://eu.api.blizzard.com/profile/user/wow', [
-                'namespace' => 'profile-eu',
-                'locale' => 'fr_FR'
-            ]);*/
-        //return $response->json();
-        //dd($response);
-        return view('welcome', [
-            'response' => $response->json(),
-        ]);
-        //return Inertia::render("Homepage");
-    }
-
-    public function test()
-    {
         $streamers = [
             ['id' => 1, 'name' => 'Streamer 1', 'avatar' => 'https://via.placeholder.com/150', 'description' => 'Best streamer ever.'],
             // ... autres streamers
@@ -56,5 +33,29 @@ class HomepageController extends Controller
             'guides' => $guides,
             'achievements' => $achievements,
         ]);
+    }
+
+    //TODO refacto api blizzard
+    public function test()
+    {
+        $token = session()->get('client_token');
+        //test request with client token
+        $response = Http::withToken($token)
+            ->get('https://eu.api.blizzard.com/data/wow/item/19019', [
+                'namespace' => 'static-eu',
+                'locale' => 'fr_FR'
+            ]);
+        //test request with user token
+        /*$response = Http::withToken('EUQF8HLmggIRGlilXkYI3PuKV7Pn7qBiT5')
+            ->get('https://eu.api.blizzard.com/profile/user/wow', [
+                'namespace' => 'profile-eu',
+                'locale' => 'fr_FR'
+            ]);*/
+        //return $response->json();
+        //dd($response);
+        return view('welcome', [
+            'response' => $response->json(),
+        ]);
+
     }
 }
