@@ -33,12 +33,18 @@ class UserResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nom Utilisateur'),
+                TextColumn::make('email'),
+                TextColumn::make('updated_at')
+                    ->label('date de dernière modification')
+                    ->dateTime('d/m/Y H:i:s'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
