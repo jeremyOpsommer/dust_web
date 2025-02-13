@@ -8,6 +8,7 @@ export default {
         './resources/js/**/*.js',
         './app/Http/Controllers/**/*.php',
         './vendor/filament/**/*.blade.php',
+        './node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx,vue}',
         './node_modules/flowbite/**/*.js',
     ],
     darkMode: 'class',
