@@ -46,7 +46,7 @@ class HomepageController extends Controller
                 'locale' => 'fr_FR'
             ]);
         //test request with user token
-        /*$response = Http::withToken('EUQF8HLmggIRGlilXkYI3PuKV7Pn7qBiT5')
+        /*$response = Http::withToken(env('BLIZZARD_TOKEN_TEST'))
             ->get('https://eu.api.blizzard.com/profile/user/wow', [
                 'namespace' => 'profile-eu',
                 'locale' => 'fr_FR'
