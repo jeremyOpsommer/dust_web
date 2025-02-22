@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Blizzard\BlizzardAuth;
+use App\Blizzard\WoW\GameData;
+use App\Blizzard\WoW\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -38,23 +41,19 @@ class HomepageController extends Controller
     //TODO refacto api blizzard
     public function test()
     {
-        $token = session()->get('client_token');
-        //test request with client token
-        $response = Http::withToken($token)
-            ->get('https://eu.api.blizzard.com/data/wow/item/19019', [
-                'namespace' => 'static-eu',
-                'locale' => 'fr_FR'
-            ]);
-        //test request with user token
-        /*$response = Http::withToken(env('BLIZZARD_TOKEN_TEST'))
-            ->get('https://eu.api.blizzard.com/profile/user/wow', [
-                'namespace' => 'profile-eu',
-                'locale' => 'fr_FR'
-            ]);*/
-        //return $response->json();
-        //dd($response);
+
+        try {
+            //test données jeu
+            $gameDataAPI = new GameData('eu',url()->current());
+            $response = $gameDataAPI->item(19019);
+            //test données user
+            //$profileAPI = new Profile('eu',url()->current());
+            //$response = $profileAPI->accountSummary();
+        }catch (RequestException $e) {
+            abort(404, $e->getMessage());
+        }
         return view('welcome', [
-            'response' => $response->json(),
+            'response' => $response,
         ]);
 
     }
