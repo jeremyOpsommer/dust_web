@@ -11,7 +11,7 @@ class OAuthController extends Controller
     public function __invoke(Request $request)
     {
         $response = Http::asForm()
-            ->withBasicAuth('878bcef0a7524e3cb7897c99712681c1', 'DtxmbB21uh1yUJ9DpMyAjSp43h4J4HSY')
+            ->withBasicAuth(config('blizzard.username'), config('blizzard.password'))
             ->post('https://oauth.battle.net/oauth/token', [
                 'redirect_uri' => route('oauth'),
                 'grant_type' => 'authorization_code',
