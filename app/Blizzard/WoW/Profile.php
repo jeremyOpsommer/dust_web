@@ -2,7 +2,6 @@
 
 namespace App\Blizzard\WoW;
 
-use App\Blizzard\BlizzardAuth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
