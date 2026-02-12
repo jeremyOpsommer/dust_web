@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from "@vitejs/plugin-vue";
 import laravel, { refreshPaths } from 'laravel-vite-plugin'
+import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
     },
     plugins: [
         vue(),
+        tailwindcss(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: [
