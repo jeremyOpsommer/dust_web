@@ -9,26 +9,17 @@
 
 ## Prérequis
 
-Prérequis pour un serveur local:
+### Pour Docker (recommandé)
+- Docker Desktop
+- Docker Compose
+- WSL2 (pour Windows)
 
-- PHP >= 8.2
-- Ctype PHP Extension
-- cURL PHP Extension
-- DOM PHP Extension
-- Fileinfo PHP Extension
-- Filter PHP Extension
-- Hash PHP Extension
-- Mbstring PHP Extension
-- OpenSSL PHP Extension
-- PCRE PHP Extension
-- PDO PHP Extension
-- Session PHP Extension
-- Tokenizer PHP Extension
-- XML PHP Extension
+### Pour serveur local
+- PHP >= 8.3
+- Extensions PHP requises : Ctype, cURL, DOM, Fileinfo, Filter, Hash, Mbstring, OpenSSL, PCRE, PDO, Session, Tokenizer, XML
 - Composer
-- Node.js version 20.0 ou supérieur
-
-Sinon un fichier docker-compose.yml est disponible pour lancer un serveur local avec Docker.
+- Node.js >= 20.0
+- MySQL >= 8.0
 
 ## Installation
 
@@ -64,26 +55,36 @@ php artisan serve
 
 ```
 
-### Avec Docker
+### Avec Docker (recommandé)
 
 ```bash
 # Cloner le dépôt
-git clone git clone git@github.com:jeremyOpsommer/dust_web.git
+git clone git@github.com:jeremyOpsommer/dust_web.git
 
 # Se déplacer dans le dossier du projet
-cd path/to/dust_web
-
-# Installer les dépendances pour récupérer sail
-composer install
+cd dust_web
 
 # Créer un fichier .env
 cp .env.example .env
 
-# Générer une clé d'application
-php artisan key:generate
+# Lancer Docker Compose
+docker compose up -d
 
-# lancer sail
-./vendor/bin/sail up
+# Installer les dépendances PHP (pour récupérer Sail)
+docker compose exec laravel.test composer install
+
+# À partir d'ici, utiliser Sail pour le reste de l'installation
+./vendor/bin/sail down
+./vendor/bin/sail up -d
+
+# Générer une clé d'application
+./vendor/bin/sail artisan key:generate
+
+# Installer les dépendances Node.js
+./vendor/bin/sail npm install
+
+# Compiler les assets
+./vendor/bin/sail npm run build
 
 # Exécuter les migrations
 ./vendor/bin/sail artisan migrate
@@ -91,13 +92,64 @@ php artisan key:generate
 # Exécuter les seeders
 ./vendor/bin/sail artisan db:seed
 
-
+# Créer un utilisateur admin (optionnel)
+./vendor/bin/sail artisan make:filament-user
 ```
+
+L'application sera accessible à :
+- Site web : http://localhost
+- Admin Filament : http://localhost/admin
+- PhpMyAdmin : http://localhost:8080
+- Mailpit : http://localhost:8025
+
+#### Utilisation avec Sail (optionnel)
+
+Une fois Sail installé via `composer install`, vous pouvez utiliser les commandes Sail au lieu de `docker compose` :
+
+```bash
+# Démarrer les conteneurs
+./vendor/bin/sail up -d
+
+# Arrêter les conteneurs
+./vendor/bin/sail down
+
+# Commandes artisan
+./vendor/bin/sail artisan migrate
+./vendor/bin/sail artisan db:seed
+
+# Commandes npm
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run dev
+./vendor/bin/sail npm run build
+
+# Accéder au shell du conteneur
+./vendor/bin/sail shell
+
+# Créer un alias pour simplifier (optionnel)
+alias sail='./vendor/bin/sail'
+# Puis utiliser : sail up -d, sail artisan migrate, etc.
+```
+
+## Stack technique
+
+- **Backend** : Laravel 12
+- **Frontend** : Vue.js 3 + Inertia.js
+- **CSS** : Tailwind CSS v4
+- **Admin** : Filament v5
+- **Base de données** : MySQL 8.0
 
 ## Utilisation
 
-### Backoffice
-- Accéder à l'interface d'administration à l'adresse http://localhost/admin.
-- Les identifiants par défaut sont à modifier dans le fichier .env.
-- Le backoffice utilise laravel filament. https://filamentphp.com/docs
+### Backoffice Filament
+- Accéder à l'interface d'administration : http://localhost/admin
+- Le backoffice utilise Filament v5 : https://filamentphp.com/docs
+
+### Développement
+```bash
+# Avec Docker - Mode watch (hot reload)
+./vendor/bin/sail npm run dev
+
+# Compiler pour la production
+./vendor/bin/sail npm run build
+```
 
