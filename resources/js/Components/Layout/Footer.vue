@@ -4,6 +4,5 @@
     </footer>
 </template>
 
-<script setup>
-// Pas besoin de script ici pour le footer simple
+<script setup lang="ts">
 </script>

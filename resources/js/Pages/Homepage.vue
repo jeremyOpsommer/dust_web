@@ -22,20 +22,37 @@
     </AppLayout>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AppLayout from '@/Layouts/AppLayout.vue';
 import HeroSection from '@/Components/Homepage/HeroSection.vue';
 import StreamersSection from '@/Components/Homepage/StreamersSection.vue';
 import GuidesSection from '@/Components/Homepage/GuidesSection.vue';
 import AchievementsSection from '@/Components/Homepage/AchievementsSection.vue';
 
-const streamers = [
-    {name: 'Streamer 1', image: '/streamer1.jpg', description: 'Joueur pro et expert en FPS.'},
-    {name: 'Streamer 2', image: '/streamer2.jpg', description: 'Streamer de jeux d’aventure.'},
-    {name: 'Streamer 3', image: '/streamer3.jpg', description: 'Expert en jeux de stratégie.'},
+interface Streamer {
+    name: string
+    image: string
+    description: string
+}
+
+interface Guide {
+    title: string
+    description: string
+    link: string
+}
+
+interface Achievement {
+    title: string
+    description: string
+}
+
+const streamers: Streamer[] = [
+    { name: 'Streamer 1', image: '/streamer1.jpg', description: 'Joueur pro et expert en FPS.' },
+    { name: 'Streamer 2', image: '/streamer2.jpg', description: 'Streamer de jeux d\'aventure.' },
+    { name: 'Streamer 3', image: '/streamer3.jpg', description: 'Expert en jeux de stratégie.' },
 ];
 
-const guides = [
+const guides: Guide[] = [
     {
         title: 'Guide pour le jeu XYZ',
         description: 'Tout ce qu\'il faut savoir pour maîtriser le jeu XYZ.',
@@ -53,7 +70,7 @@ const guides = [
     },
 ];
 
-const achievements = [
+const achievements: Achievement[] = [
     {
         title: 'Utilisateur 1',
         description: 'A atteint le niveau 50 dans XYZ avec des statistiques impressionnantes !'

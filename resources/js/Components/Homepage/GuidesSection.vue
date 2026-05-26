@@ -13,9 +13,15 @@
     </section>
 </template>
 
-<script setup>
-const props = defineProps({
-    title: String,
-    guides: Array
-});
+<script setup lang="ts">
+interface Guide {
+    title: string
+    description: string
+    link: string
+}
+
+defineProps<{
+    title: string
+    guides: Guide[]
+}>()
 </script>

@@ -15,9 +15,15 @@
     </section>
 </template>
 
-<script setup>
-const props = defineProps({
-    title: String,
-    streamers: Array
-});
+<script setup lang="ts">
+interface Streamer {
+    name: string
+    image: string
+    description: string
+}
+
+defineProps<{
+    title: string
+    streamers: Streamer[]
+}>()
 </script>
