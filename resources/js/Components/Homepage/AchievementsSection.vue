@@ -12,9 +12,14 @@
     </section>
 </template>
 
-<script setup>
-const props = defineProps({
-    title: String,
-    achievements: Array
-});
+<script setup lang="ts">
+interface Achievement {
+    title: string
+    description: string
+}
+
+defineProps<{
+    title: string
+    achievements: Achievement[]
+}>()
 </script>

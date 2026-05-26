@@ -114,15 +114,14 @@
     </AppLayout>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Profile from "@/Components/User/Profile.vue";
 import Hooks from "@/Components/User/Hooks.vue";
 import { ref, onMounted } from 'vue';
-import { Tabs } from 'flowbite';
+import { Tabs, type TabItem, type TabsOptions } from 'flowbite';
 
-// Références pour Vue 3
-const tabsElement = ref(null);
+const tabsElement = ref<HTMLElement | null>(null);
 
 onMounted(() => {
     if (!tabsElement.value) {
@@ -130,31 +129,31 @@ onMounted(() => {
         return;
     }
 
-    const tabElements = [
+    const tabElements: TabItem[] = [
         {
             id: 'profile',
-            triggerEl: document.querySelector('#profile'),
-            targetEl: document.querySelector('#user-profile'),
+            triggerEl: document.querySelector<HTMLElement>('#profile')!,
+            targetEl: document.querySelector<HTMLElement>('#user-profile')!,
         },
         {
             id: 'hooks',
-            triggerEl: document.querySelector('#hooks'),
-            targetEl: document.querySelector('#user-hooks'),
+            triggerEl: document.querySelector<HTMLElement>('#hooks')!,
+            targetEl: document.querySelector<HTMLElement>('#user-hooks')!,
         },
         {
             id: 'streamers',
-            triggerEl: document.querySelector('#streamers'),
-            targetEl: document.querySelector('#user-streamers'),
+            triggerEl: document.querySelector<HTMLElement>('#streamers')!,
+            targetEl: document.querySelector<HTMLElement>('#user-streamers')!,
         },
         {
             id: 'guides',
-            triggerEl: document.querySelector('#guides'),
-            targetEl: document.querySelector('#user-guides'),
+            triggerEl: document.querySelector<HTMLElement>('#guides')!,
+            targetEl: document.querySelector<HTMLElement>('#user-guides')!,
         },
         {
             id: 'works',
-            triggerEl: document.querySelector('#works'),
-            targetEl: document.querySelector('#user-works'),
+            triggerEl: document.querySelector<HTMLElement>('#works')!,
+            targetEl: document.querySelector<HTMLElement>('#user-works')!,
         },
     ];
 
@@ -164,7 +163,7 @@ onMounted(() => {
         }
     }
 
-    const options = {
+    const options: TabsOptions = {
         defaultTabId: 'profile',
         activeClasses:
             'text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500',
@@ -180,7 +179,6 @@ onMounted(() => {
         override: true
     };
 
-    // Initialisation de Flowbite Tabs
     new Tabs(tabsElement.value, tabElements, options, instanceOptions);
 });
 </script>

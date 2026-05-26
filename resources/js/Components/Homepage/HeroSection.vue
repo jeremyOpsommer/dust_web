@@ -9,12 +9,12 @@
     </section>
 </template>
 
-<script setup>
-const props = defineProps({
-    title: String,
-    subtitle: String,
-    ctaLink: String,
-    ctaText: String,
-    backgroundImage: String
-});
+<script setup lang="ts">
+defineProps<{
+    title: string
+    subtitle: string
+    ctaLink: string
+    ctaText: string
+    backgroundImage: string
+}>()
 </script>

@@ -68,20 +68,18 @@
     </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { initFlowbite } from 'flowbite';
 import { Link } from '@inertiajs/inertia-vue3';
-//import { ZiggyVue } from 'ziggy-js';
 
 onMounted(() => {
     initFlowbite();
 });
 
-// Gestion du mode sombre
-const isDarkMode = ref(localStorage.getItem('theme') === 'dark');
+const isDarkMode = ref<boolean>(localStorage.getItem('theme') === 'dark');
 
-const toggleDarkMode = () => {
+const toggleDarkMode = (): void => {
     if (isDarkMode.value) {
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');

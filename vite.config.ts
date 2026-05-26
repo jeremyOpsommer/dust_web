@@ -15,7 +15,7 @@ export default defineConfig({
         vue(),
         tailwindcss(),
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: ['resources/css/app.css', 'resources/js/app.ts'],
             refresh: [
                 ...refreshPaths,
                 'app/Filament/**',
