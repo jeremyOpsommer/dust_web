@@ -71,7 +71,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { initFlowbite } from 'flowbite';
-import { Link } from '@inertiajs/inertia-vue3';
+import { Link } from '@inertiajs/vue3';
 
 onMounted(() => {
     initFlowbite();
