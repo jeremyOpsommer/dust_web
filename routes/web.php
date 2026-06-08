@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\WowInstanceController as AdminWowInstanceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BlizzardAPI\OAuthController;
+use App\Http\Controllers\BlizzardAPI\WowCharacterController;
+use App\Http\Controllers\BlizzardAPI\WowCharacterRefreshController;
 use App\Http\Controllers\Frontend\HomepageController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\TwitchAPI\OAuthController as TwitchOAuthController;
@@ -32,7 +35,17 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/oauth', OAuthController::class)->name('oauth');
+// Blizzard OAuth
+Route::get('/blizzard/redirect', [OAuthController::class, 'redirect'])->name('blizzard.oauth.redirect')->middleware('auth');
+Route::get('/oauth', [OAuthController::class, 'callback'])->name('oauth');
+
+// WoW personnages (JSON)
+Route::middleware('auth')->group(function () {
+    Route::get('/blizzard/characters', [WowCharacterController::class, 'available'])->name('wow.characters.available');
+    Route::post('/blizzard/characters', [WowCharacterController::class, 'store'])->name('wow.characters.store');
+    Route::delete('/blizzard/characters/{character}', [WowCharacterController::class, 'destroy'])->name('wow.characters.destroy');
+    Route::post('/blizzard/characters/{character}/refresh', WowCharacterRefreshController::class)->name('wow.characters.refresh');
+});
 
 // Twitch OAuth
 Route::middleware('auth')->group(function () {
@@ -44,4 +57,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', AdminDashboardController::class)->name('dashboard');
     Route::resource('users', AdminUserController::class)->except('show');
+    Route::get('wow-instances', [AdminWowInstanceController::class, 'index'])->name('wow-instances.index');
+    Route::put('wow-instances/{wowInstance}', [AdminWowInstanceController::class, 'update'])->name('wow-instances.update');
+    Route::put('wow-instances-expansion', [AdminWowInstanceController::class, 'updateExpansion'])->name('wow-instances.update-expansion');
 });

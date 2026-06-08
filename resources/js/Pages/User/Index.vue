@@ -96,7 +96,7 @@
                             <Profile :user="props.user" />
                         </div>
                         <div id="user-hooks">
-                            <Hooks/>
+                            <Hooks :blizzard-connected="props.blizzardConnected" :wow-characters="props.wowCharacters" :wow-instances="props.wowInstances" />
                         </div>
                         <div id="user-streamers">
                             tab3
@@ -120,9 +120,13 @@ import Profile from "@/Components/User/Profile.vue";
 import Hooks from "@/Components/User/Hooks.vue";
 import { ref, onMounted } from 'vue';
 import { Tabs, type TabItem, type TabsOptions } from 'flowbite';
+import type { WowChar, WowInstance } from '@/types/wow';
 
 const props = defineProps<{
     user: { name: string; email: string; created_at: string; updated_at: string } | null;
+    blizzardConnected: boolean;
+    wowCharacters: WowChar[];
+    wowInstances: Record<number, WowInstance>;
 }>();
 
 const tabsElement = ref<HTMLElement | null>(null);

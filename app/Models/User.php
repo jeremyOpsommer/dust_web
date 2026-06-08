@@ -47,6 +47,11 @@ class User extends Authenticatable
         ];
     }
 
+    public function wowCharacters(): HasMany
+    {
+        return $this->hasMany(WowCharacter::class);
+    }
+
     public function oauthTokens(): HasMany
     {
         return $this->hasMany(OauthToken::class);

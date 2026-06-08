@@ -1,44 +1,304 @@
 <template>
-    <dl class="">
-        <dt class="flex flex-row items-center font-semibold text-gray-900 dark:text-white">
+    <div class="space-y-6">
 
-            <div class="mx-2">Twitch</div>
-            <span class="flex w-3 h-3 me-3 bg-gray-900 rounded-full dark:bg-gray-700"></span>
-        </dt>
-        <dd class="text-gray-500 dark:text-gray-400">Bientôt disponible</dd>
-    </dl>
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-    <dl class="">
-        <dt class="flex flex-row items-center font-semibold text-gray-900 dark:text-white">
-            <svg fill="#0fafff" width="24px" height="24px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"
-                 stroke="#0fafff">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                    <path
-                        d="M 26.578125 14.339844 C 26.578125 14.339844 28.882813 14.457031 28.882813 13.101563 C 28.882813 11.332031 25.8125 9.738281 25.8125 9.738281 C 25.8125 9.738281 26.292969 8.71875 26.59375 8.148438 C 26.894531 7.578125 27.738281 5.359375 27.8125 4.851563 C 27.90625 4.210938 27.761719 4.011719 27.761719 4.011719 C 27.554688 5.378906 25.328125 9.316406 25.148438 9.449219 C 22.976563 8.433594 19.992188 8.148438 19.992188 8.148438 C 19.992188 8.148438 17.070313 2 14.320313 2 C 11.59375 2 11.609375 7.265625 11.609375 7.265625 C 11.609375 7.265625 10.839844 5.773438 9.871094 5.773438 C 8.457031 5.773438 7.992188 7.90625 7.992188 10.222656 C 5.203125 10.222656 2.855469 10.847656 2.644531 10.90625 C 2.4375 10.964844 1.777344 11.445313 2.074219 11.386719 C 2.6875 11.191406 5.554688 10.746094 8.0625 10.964844 C 8.203125 13.164063 9.488281 16.03125 9.488281 16.03125 C 9.488281 16.03125 6.730469 20.023438 6.730469 22.871094 C 6.730469 23.621094 7.058594 24.992188 9.035156 24.992188 C 10.695313 24.992188 12.558594 23.996094 12.90625 23.796875 C 12.601563 24.230469 12.375 25.0625 12.375 25.445313 C 12.375 25.757813 12.5625 26.644531 13.839844 26.644531 C 15.480469 26.644531 17.316406 25.386719 17.316406 25.386719 C 17.316406 25.386719 19.050781 28.261719 20.53125 29.578125 C 20.929688 29.933594 21.3125 30 21.3125 30 C 21.3125 30 19.839844 28.585938 17.902344 24.9375 C 19.703125 23.828125 21.578125 21.203125 21.578125 21.203125 C 21.578125 21.203125 21.800781 21.210938 23.511719 21.210938 C 26.191406 21.210938 29.996094 20.648438 29.996094 18.519531 C 30 16.324219 26.578125 14.339844 26.578125 14.339844 Z M 26.875 13.015625 C 26.875 13.792969 26.136719 13.785156 26.136719 13.785156 L 25.574219 13.820313 C 25.574219 13.820313 24.507813 13.261719 23.859375 12.996094 C 23.859375 12.996094 24.863281 11.453125 25.097656 11.023438 C 25.273438 11.128906 26.875 12.128906 26.875 13.015625 Z M 15.660156 5.097656 C 16.921875 5.097656 18.71875 8.066406 18.71875 8.066406 C 18.71875 8.066406 15.914063 7.816406 13.605469 9.171875 C 13.667969 7.035156 14.386719 5.097656 15.660156 5.097656 Z M 10.671875 7.503906 C 11.070313 7.503906 11.460938 7.992188 11.625 8.402344 C 11.625 8.675781 11.765625 10.269531 11.765625 10.269531 L 9.453125 10.179688 C 9.453125 8.097656 10.269531 7.503906 10.671875 7.503906 Z M 10.429688 21.976563 C 9.164063 21.976563 8.90625 21.273438 8.90625 20.640625 C 8.90625 19.207031 10.050781 17.199219 10.050781 17.199219 C 10.050781 17.199219 11.335938 19.898438 13.574219 21.035156 C 12.464844 21.6875 11.546875 21.976563 10.429688 21.976563 Z M 14.535156 24.800781 C 13.648438 24.800781 13.539063 24.226563 13.539063 24.09375 C 13.539063 23.683594 13.863281 23.195313 13.863281 23.195313 C 13.863281 23.195313 15.351563 22.191406 15.445313 22.082031 L 16.546875 24.136719 C 16.546875 24.136719 15.421875 24.800781 14.535156 24.800781 Z M 17.300781 23.683594 C 16.761719 22.742188 16.363281 21.757813 16.363281 21.757813 C 16.363281 21.757813 18.578125 21.898438 19.769531 20.671875 C 19.027344 21.003906 17.84375 21.425781 16.46875 21.296875 C 19.34375 18.765625 21.023438 16.929688 22.441406 15.035156 C 22.320313 14.886719 21.671875 14.433594 21.511719 14.359375 C 20.65625 15.390625 17.324219 18.949219 14.238281 20.710938 C 10.332031 18.582031 9.511719 12.320313 9.429688 11.019531 L 11.5625 11.222656 C 11.5625 11.222656 10.761719 12.644531 10.761719 13.691406 C 10.761719 14.734375 10.886719 14.789063 10.886719 14.789063 C 10.886719 14.789063 10.859375 12.96875 11.984375 11.5625 C 12.84375 16.125 13.738281 18.460938 14.433594 19.855469 C 14.789063 19.707031 15.449219 19.414063 15.449219 19.414063 C 15.449219 19.414063 13.480469 13.738281 13.589844 9.898438 C 14.484375 9.421875 15.808594 8.929688 17.300781 8.929688 C 21.230469 8.929688 24.390625 10.617188 24.390625 10.617188 L 23.15625 12.34375 C 23.15625 12.34375 22.054688 10.351563 20.496094 9.996094 C 21.316406 10.605469 22.238281 11.414063 22.714844 12.574219 C 19.457031 11.304688 15.527344 10.632813 14.265625 10.484375 C 14.15625 10.949219 14.171875 11.613281 14.171875 11.613281 C 14.171875 11.613281 19.441406 12.585938 23.277344 14.777344 C 23.25 19.574219 18.023438 23.257813 17.300781 23.683594 Z M 22.292969 20.097656 C 22.292969 20.097656 23.929688 17.953125 23.902344 15.109375 C 23.902344 15.109375 26.546875 16.746094 26.546875 18.34375 C 26.546875 20.125 22.292969 20.097656 22.292969 20.097656 Z"></path>
-                </g>
-            </svg>
-            <div class="mx-2">Battle.net</div>
-            <span class="flex w-3 h-3 me-3 bg-green-500 rounded-full"></span>
-        </dt>
-        <dd class="text-gray-500 dark:text-gray-400">[Nom du compte]</dd>
-        <dt class="flex flex-row items-center font-semibold text-gray-900 dark:text-white">
-            <img src="../../../images/icons/WoW_icon.svg" alt="wow_icon" />
-            <div class="mx-2 mt-2">World of Warcraft</div>
-        </dt>
-        <dd>
-            <div class="flex flex-row items-center">
-                <div class="w-12 h-12 bg-cover mr-2" style="background-image: url(https://render.worldofwarcraft.com/eu/character/kaelthas/74/90843210-avatar.jpg)"></div>
-                <div class="flex flex-col text-xs">
-                    <span class="text-pink-400">Navi</span>
-                    <span><b>80</b> Paladin</span>
-                    <span>Kael'thas</span>
-                </div>
+        <!-- Twitch -->
+        <div>
+            <div class="flex items-center gap-2 mb-1">
+                <span class="font-semibold text-gray-900 dark:text-white">Twitch</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-gray-400 dark:bg-gray-600"></span>
             </div>
-        </dd>
-    </dl>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Bientôt disponible</p>
+        </div>
+
+        <hr class="border-gray-200 dark:border-gray-700" />
+
+        <!-- Battle.net -->
+        <div>
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                    <svg fill="#0fafff" width="22px" height="22px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 26.578125 14.339844 C 26.578125 14.339844 28.882813 14.457031 28.882813 13.101563 C 28.882813 11.332031 25.8125 9.738281 25.8125 9.738281 C 25.8125 9.738281 26.292969 8.71875 26.59375 8.148438 C 26.894531 7.578125 27.738281 5.359375 27.8125 4.851563 C 27.90625 4.210938 27.761719 4.011719 27.761719 4.011719 C 27.554688 5.378906 25.328125 9.316406 25.148438 9.449219 C 22.976563 8.433594 19.992188 8.148438 19.992188 8.148438 C 19.992188 8.148438 17.070313 2 14.320313 2 C 11.59375 2 11.609375 7.265625 11.609375 7.265625 C 11.609375 7.265625 10.839844 5.773438 9.871094 5.773438 C 8.457031 5.773438 7.992188 7.90625 7.992188 10.222656 C 5.203125 10.222656 2.855469 10.847656 2.644531 10.90625 C 2.4375 10.964844 1.777344 11.445313 2.074219 11.386719 C 2.6875 11.191406 5.554688 10.746094 8.0625 10.964844 C 8.203125 13.164063 9.488281 16.03125 9.488281 16.03125 C 9.488281 16.03125 6.730469 20.023438 6.730469 22.871094 C 6.730469 23.621094 7.058594 24.992188 9.035156 24.992188 C 10.695313 24.992188 12.558594 23.996094 12.90625 23.796875 C 12.601563 24.230469 12.375 25.0625 12.375 25.445313 C 12.375 25.757813 12.5625 26.644531 13.839844 26.644531 C 15.480469 26.644531 17.316406 25.386719 17.316406 25.386719 C 17.316406 25.386719 19.050781 28.261719 20.53125 29.578125 C 20.929688 29.933594 21.3125 30 21.3125 30 C 21.3125 30 19.839844 28.585938 17.902344 24.9375 C 19.703125 23.828125 21.578125 21.203125 21.578125 21.203125 C 21.578125 21.203125 21.800781 21.210938 23.511719 21.210938 C 26.191406 21.210938 29.996094 20.648438 29.996094 18.519531 C 30 16.324219 26.578125 14.339844 26.578125 14.339844 Z"/>
+                    </svg>
+                    <span class="font-semibold text-gray-900 dark:text-white">Battle.net</span>
+                    <span class="w-2.5 h-2.5 rounded-full" :class="blizzardConnected ? 'bg-green-500' : 'bg-gray-400'"></span>
+                </div>
+                <a v-if="!blizzardConnected" :href="route('blizzard.oauth.redirect')"
+                    class="px-3 py-1.5 text-xs font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700">
+                    Se connecter
+                </a>
+                <span v-else class="text-xs text-green-600 dark:text-green-400 font-medium">Connecté</span>
+            </div>
+
+            <!-- WoW -->
+            <template v-if="blizzardConnected">
+                <div class="flex items-center gap-2 mb-3 mt-4">
+                    <img src="../../../images/icons/WoW_icon.svg" alt="wow" class="w-5 h-5" />
+                    <span class="font-medium text-gray-900 dark:text-white text-sm">World of Warcraft</span>
+                </div>
+
+                <!-- Personnages sauvegardés -->
+                <div v-if="wowCharacters.length" class="space-y-2 mb-4">
+                    <div v-for="char in wowCharacters" :key="char.id"
+                        class="rounded-lg border border-gray-200 dark:border-gray-600 overflow-hidden">
+
+                        <!-- En-tête personnage -->
+                        <div class="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700">
+                            <button @click="toggleCharacter(char.id)" class="flex items-center gap-3 flex-1 text-left">
+                                <div class="w-10 h-10 bg-cover rounded-full border border-gray-200 dark:border-gray-600 shrink-0"
+                                    :style="`background-image: url(${char.avatar_url})`"></div>
+                                <div class="text-xs">
+                                    <div class="font-semibold" :style="`color: ${classColor(char.class_name)}`">{{ char.name }}</div>
+                                    <div class="text-gray-500 dark:text-gray-400">
+                                        <b>{{ char.level }}</b> {{ char.class_name }}
+                                        <span v-if="char.stats?.item_level" class="ml-1 text-yellow-500 dark:text-yellow-400">({{ char.stats.item_level }} iLvl)</span>
+                                    </div>
+                                    <div class="text-gray-400">{{ char.realm_name }}</div>
+                                </div>
+                                <svg class="w-4 h-4 ml-2 text-gray-400 transition-transform"
+                                    :class="{ 'rotate-180': openCharacter === char.id }"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div class="flex items-center gap-1 ml-2">
+                                <span v-if="char.last_refreshed_at" class="text-xs text-gray-400 mr-1">{{ char.last_refreshed_at }}</span>
+                                <button @click="refreshCharacter(char.id)" :disabled="!char.can_refresh"
+                                    class="p-1 text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 disabled:opacity-30 disabled:cursor-not-allowed"
+                                    :title="char.can_refresh ? 'Mettre à jour' : 'Disponible dans 1h'">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                    </svg>
+                                </button>
+                                <button @click="removeCharacter(char.id)"
+                                    class="p-1 text-red-500 hover:text-red-700 dark:hover:text-red-400" title="Retirer">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Données détaillées -->
+                        <div v-if="openCharacter === char.id" class="p-3 text-xs space-y-4 bg-white dark:bg-gray-800">
+
+                            <!-- Pas encore de données -->
+                            <p v-if="!char.stats && !char.equipment && !char.pve_progression"
+                                class="text-gray-500 dark:text-gray-400 italic">
+                                Aucune donnée — cliquez sur 🔄 pour synchroniser.
+                            </p>
+
+                            <!-- Stats -->
+                            <div v-if="char.stats">
+                                <p class="font-semibold text-gray-700 dark:text-gray-300 mb-2">Statistiques</p>
+                                <div class="grid grid-cols-2 gap-x-6 gap-y-1 text-gray-600 dark:text-gray-400">
+                                    <span>Item level moyen</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.item_level ?? '—' }}</span>
+                                    <template v-if="char.stats.strength"><span>Force</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.strength }}</span></template>
+                                    <template v-if="char.stats.agility"><span>Agilité</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.agility }}</span></template>
+                                    <template v-if="char.stats.intellect"><span>Intelligence</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.intellect }}</span></template>
+                                    <span>Endurance</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.stamina ?? '—' }}</span>
+                                    <span>Critique</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.critical_strike }}%</span>
+                                    <span>Hâte</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.haste }}%</span>
+                                    <span>Maîtrise</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.mastery }}%</span>
+                                    <span>Polyvalence</span><span class="font-medium text-gray-900 dark:text-white">{{ char.stats.versatility }}%</span>
+                                </div>
+                            </div>
+
+                            <!-- Équipement -->
+                            <div v-if="char.equipment?.length">
+                                <p class="font-semibold text-gray-700 dark:text-gray-300 mb-2">Équipement</p>
+                                <div class="space-y-1">
+                                    <div v-for="slot in char.equipment" :key="slot.slot"
+                                        class="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+                                        <span class="w-28 shrink-0">{{ slotName(slot.slot) }}</span>
+                                        <span class="font-medium text-gray-900 dark:text-white">#{{ slot.item_id }}</span>
+                                        <span v-if="slot.enchantments.length" class="text-purple-500">
+                                            ✦ {{ slot.enchantments.join(', ') }}
+                                        </span>
+                                        <span v-if="slot.gems.length" class="text-cyan-500">
+                                            ◆ {{ slot.gems.join(', ') }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Progression PVE -->
+                            <div v-if="char.pve_progression?.length">
+                                <p class="font-semibold text-gray-700 dark:text-gray-300 mb-2">Progression PVE</p>
+                                <div class="space-y-2">
+                                    <div v-for="raid in char.pve_progression" :key="raid.name">
+                                        <p class="font-medium text-gray-800 dark:text-gray-200 mb-1">{{ raidName(raid) }}</p>
+                                        <div class="flex gap-4 text-gray-600 dark:text-gray-400">
+                                            <span>Normal <b class="text-gray-900 dark:text-white">{{ raid.normal.completed }}/{{ raid.normal.total }}</b></span>
+                                            <span>Héroïque <b class="text-gray-900 dark:text-white">{{ raid.heroic.completed }}/{{ raid.heroic.total }}</b></span>
+                                            <span>Mythique <b class="text-gray-900 dark:text-white">{{ raid.mythic.completed }}/{{ raid.mythic.total }}</b></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <p v-else class="text-sm text-gray-500 dark:text-gray-400 mb-3">Aucun personnage ajouté.</p>
+
+                <!-- Bouton pour ouvrir la sélection -->
+                <button @click="togglePicker" type="button"
+                    class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-400">
+                    {{ showPicker ? 'Fermer' : '+ Ajouter un personnage' }}
+                </button>
+
+                <!-- Picker : liste des personnages Blizzard -->
+                <div v-if="showPicker" class="mt-3">
+                    <div v-if="loadingCharacters" class="text-sm text-gray-500 dark:text-gray-400">Chargement...</div>
+                    <div v-else-if="apiError" class="text-sm text-red-500">{{ apiError }}</div>
+                    <div v-else-if="unsavedCharacters.length === 0" class="text-sm text-gray-500 dark:text-gray-400">
+                        Tous vos personnages ont été ajoutés.
+                    </div>
+                    <div v-else class="space-y-2 max-h-72 overflow-y-auto pr-1">
+                        <div v-for="char in unsavedCharacters" :key="char.blizzard_id"
+                            class="flex items-center justify-between p-2 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-cover rounded-full border border-gray-200 dark:border-gray-600"
+                                    :style="`background-image: url(${char.avatar_url})`"></div>
+                                <div class="text-xs">
+                                    <div class="font-semibold" :style="`color: ${classColor(char.class_name)}`">{{ char.name }}</div>
+                                    <div class="text-gray-500 dark:text-gray-400"><b>{{ char.level }}</b> {{ char.class_name }}</div>
+                                    <div class="text-gray-400">{{ char.realm_name }}</div>
+                                </div>
+                            </div>
+                            <button @click="addCharacter(char)" type="button"
+                                class="px-2 py-1 text-xs font-medium text-white bg-blue-700 rounded hover:bg-blue-800 dark:bg-blue-600">
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <p v-else class="text-sm text-gray-500 dark:text-gray-400">
+                Connectez votre compte Battle.net pour gérer vos personnages.
+            </p>
+        </div>
+    </div>
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue';
+import { useForm, router } from '@inertiajs/vue3';
+
+import type { WowChar, WowInstance } from '@/types/wow';
+
+type ApiChar = {
+    blizzard_id: number;
+    name: string;
+    realm_slug: string;
+    realm_name: string;
+    class_name: string;
+    level: number;
+    avatar_url: string;
+};
+
+const props = defineProps<{
+    blizzardConnected: boolean;
+    wowCharacters: WowChar[];
+    wowInstances: Record<number, WowInstance>;
+}>();
+
+const showPicker       = ref(false);
+const availableCharacters = ref<ApiChar[]>([]);
+const loadingCharacters   = ref(false);
+const apiError            = ref('');
+
+const savedBlizzardIds = computed(() => new Set(props.wowCharacters.map(c => c.blizzard_id)));
+
+const openCharacter = ref<number | null>(null);
+function toggleCharacter(id: number) {
+    openCharacter.value = openCharacter.value === id ? null : id;
+}
+
+
+const unsavedCharacters = computed(() =>
+    availableCharacters.value.filter(c => !savedBlizzardIds.value.has(c.blizzard_id))
+);
+
+const CLASS_COLORS: Record<string, string> = {
+    // Français
+    'Guerrier': '#C69B3A', 'Paladin': '#F48CBA', 'Chasseur': '#AAD372',
+    'Voleur': '#FFF468', 'Prêtre': '#FFFFFF', 'Chevalier de la mort': '#C41E3A',
+    'Chaman': '#0070DD', 'Mage': '#3FC7EB', 'Démoniste': '#8788EE',
+    'Moine': '#00FF98', 'Druide': '#FF7C0A', 'Chasseur de démons': '#A330C9',
+    'Évocateur': '#33937F',
+    // Anglais (fallback)
+    'Warrior': '#C69B3A', 'Hunter': '#AAD372', 'Rogue': '#FFF468',
+    'Priest': '#FFFFFF', 'Death Knight': '#C41E3A', 'Shaman': '#0070DD',
+    'Warlock': '#8788EE', 'Monk': '#00FF98', 'Druid': '#FF7C0A',
+    'Demon Hunter': '#A330C9', 'Evoker': '#33937F',
+};
+
+function classColor(className: string): string {
+    return CLASS_COLORS[className] ?? '#9CA3AF';
+}
+
+const SLOT_NAMES: Record<string, string> = {
+    HEAD: 'Tête', NECK: 'Cou', SHOULDER: 'Épaules', BACK: 'Dos',
+    CHEST: 'Torse', SHIRT: 'Chemise', TABARD: 'Tabard', WRIST: 'Poignets',
+    HANDS: 'Mains', WAIST: 'Taille', LEGS: 'Jambes', FEET: 'Pieds',
+    FINGER_1: 'Anneau 1', FINGER_2: 'Anneau 2',
+    TRINKET_1: 'Bijou 1', TRINKET_2: 'Bijou 2',
+    MAIN_HAND: 'Main droite', OFF_HAND: 'Main gauche',
+    RANGED: 'À distance',
+};
+
+function slotName(slot: string): string {
+    return SLOT_NAMES[slot] ?? slot.replace(/_/g, ' ').toLowerCase();
+}
+
+function raidName(raid: { instance_id: number | null; name: string }): string {
+    if (raid.instance_id && props.wowInstances[raid.instance_id]) {
+        const instance = props.wowInstances[raid.instance_id];
+        return instance.name_fr ?? instance.name_en;
+    }
+    return raid.name;
+}
+
+async function togglePicker() {
+    showPicker.value = !showPicker.value;
+    if (showPicker.value && availableCharacters.value.length === 0) {
+        await fetchCharacters();
+    }
+}
+
+async function fetchCharacters() {
+    loadingCharacters.value = true;
+    apiError.value = '';
+    try {
+        const res = await fetch(route('wow.characters.available'), {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        });
+        if (!res.ok) throw new Error('Erreur API');
+        availableCharacters.value = await res.json();
+    } catch {
+        apiError.value = 'Impossible de récupérer les personnages depuis Battle.net.';
+    } finally {
+        loadingCharacters.value = false;
+    }
+}
+
+const addForm = useForm<ApiChar & { [key: string]: any }>({
+    blizzard_id: 0, name: '', realm_slug: '', realm_name: '', class_name: '', level: 0, avatar_url: '',
+});
+
+function addCharacter(char: ApiChar) {
+    Object.assign(addForm, char);
+    addForm.post(route('wow.characters.store'), {
+        preserveScroll: true,
+    });
+}
+
+function removeCharacter(id: number) {
+    router.delete(route('wow.characters.destroy', id), { preserveScroll: true });
+}
+
+function refreshCharacter(id: number) {
+    router.post(route('wow.characters.refresh', id), {}, { preserveScroll: true });
+}
 </script>

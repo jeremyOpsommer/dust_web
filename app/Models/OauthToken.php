@@ -10,6 +10,7 @@ class OauthToken extends Model
     protected $fillable = [
         'user_id',
         'provider',
+        'provider_user_id',
         'access_token',
         'refresh_token',
         'expires_at',
