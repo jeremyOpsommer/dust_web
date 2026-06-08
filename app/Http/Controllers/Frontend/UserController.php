@@ -12,7 +12,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        return Inertia::render('User/Index');
+        return Inertia::render('User/Index', [
+            'user' => auth()->user()?->only('name', 'email', 'created_at', 'updated_at'),
+        ]);
     }
 
     public function update(Request $request)

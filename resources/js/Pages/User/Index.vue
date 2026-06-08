@@ -93,7 +93,7 @@
                     </div>
                     <div class="lg:col-span-2">
                         <div id="user-profile">
-                            <Profile />
+                            <Profile :user="props.user" />
                         </div>
                         <div id="user-hooks">
                             <Hooks/>
@@ -120,6 +120,10 @@ import Profile from "@/Components/User/Profile.vue";
 import Hooks from "@/Components/User/Hooks.vue";
 import { ref, onMounted } from 'vue';
 import { Tabs, type TabItem, type TabsOptions } from 'flowbite';
+
+const props = defineProps<{
+    user: { name: string; email: string; created_at: string; updated_at: string } | null;
+}>();
 
 const tabsElement = ref<HTMLElement | null>(null);
 

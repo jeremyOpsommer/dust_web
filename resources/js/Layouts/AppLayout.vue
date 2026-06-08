@@ -7,10 +7,12 @@
             <slot />
         </main>
         <Footer />
+        <Toast />
     </div>
 </template>
 
 <script setup lang="ts">
 import Header from '@/Components/Layout/Header.vue';
 import Footer from '@/Components/Layout/Footer.vue';
+import Toast from '@/Components/Layout/Toast.vue';
 </script>
